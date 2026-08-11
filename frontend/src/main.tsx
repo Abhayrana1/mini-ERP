@@ -40,7 +40,7 @@ import {
 } from 'lucide-react';
 import './styles.css';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API = import.meta.env.VITE_API_URL || '/api';
 
 export type Role = 'ADMIN' | 'SALES' | 'WAREHOUSE' | 'ACCOUNTS';
 

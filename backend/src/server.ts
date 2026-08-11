@@ -223,5 +223,4 @@ app.use((err:any,_req:any,res:any,_next:any)=>{
   res.status(500).json({message:err?.message||'Internal server error'});
 });
 
-const port=Number(process.env.PORT||5000);
-app.listen(port,()=>console.log(`API running on http://localhost:${port}`));
+export default app;
