@@ -1,3 +1,4 @@
+cat > vercel.json <<'EOF'
 {
   "services": {
     "frontend": {
@@ -5,22 +6,24 @@
       "framework": "vite"
     },
     "backend": {
-      "root": "backend"
+      "root": "backend",
+      "framework": "express",
+      "entrypoint": "dist/server.js"
     }
   },
   "rewrites": [
     {
-      "source": "/api/(.*)",
+      "source": "/api/(.)",
       "destination": {
         "service": "backend"
       }
     },
     {
-      "source": "/(.*)",
+      "source": "/(.)",
       "destination": {
         "service": "frontend"
       }
     }
   ]
 }
-
+EOF
