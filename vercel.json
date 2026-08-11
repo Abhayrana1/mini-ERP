@@ -1,4 +1,3 @@
-cat > vercel.json <<'EOF'
 {
   "services": {
     "frontend": {
@@ -13,17 +12,16 @@ cat > vercel.json <<'EOF'
   },
   "rewrites": [
     {
-      "source": "/api/(.)",
+      "source": "/api/(.*)",
       "destination": {
         "service": "backend"
       }
     },
     {
-      "source": "/(.)",
+      "source": "/(.*)",
       "destination": {
         "service": "frontend"
       }
     }
   ]
 }
-EOF
